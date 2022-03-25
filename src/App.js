@@ -5,13 +5,13 @@ import BookstoreContainer from './components/BookstoreContainer';
 import Categories from './redux/categories/categories';
 
 const App = () => (
-    <div className="app">
-        <Header />
-        <Routes>
-            <Route path="/" element={<BookstoreContainer />} />
-            <Route path="/categories" element={<Categories />} />
-        </Routes>
-    </div>
+  <div className="app">
+    <Header />
+    <Routes>
+      <Route path="/" element={<BookstoreContainer />} />
+      <Route path="/categories" element={<Categories />} />
+    </Routes>
+  </div>
 );
 
 export default App;
