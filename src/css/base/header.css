@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.813rem 6.25rem;
+}
+
+.bookstore-title {
+  color: #0290ff;
+  font-size: 1.875rem;
+}
+
+.book-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+}
+
+.item a {
+  color: #121212;
+}
