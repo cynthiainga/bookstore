@@ -1,33 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-const Book = ({ book }) => (
-  <div className="books-container">
-    <div>
-      <div className="book-category">{book.category}</div>
-      <div className="book-title">{book.title}</div>
-      <div className="book-author">{book.author}</div>
-    </div>
+const Book = ({ book }) => {
+  const dispatch = useDispatch();
+  const handleClick = (e, bookId) => {
+    e.preventDefault();
+    dispatch(removeBook(bookId));
+  };
 
-    <div>
-      <div className="book-complChart" />
-      <div className="book-completed">
-        {book.completed}
-        %
+  return (
+    <div className="books-container">
+      <div>
+        <div className="book-category">{book.category}</div>
+        <div className="book-title">
+          <h3>{book.title}</h3>
+        </div>
+        <span className="book-author">{book.author}</span>
       </div>
-      <div className="book-complPref">completed</div>
-    </div>
-    <div>
-      <div className="book-curChap">Current Chapter</div>
-      <div className="book-curChap">
-        Chapter
-        {book.currentChapter}
-        <span className="book-curChap-title">{book.currentChapterTitle}</span>
+      <div>
+        <div className="book-complChart" />
+        <div className="book-completed">
+          {book.completed}
+          %
+        </div>
+        <div className="book-complPref">completed</div>
+      </div>
+      <div>
+        <div className="book-curChap">Current Chapter</div>
+        <div className="book-curChap">
+          Chapter
+          {book.currentChapter}
+          <span className="book-curChap-title">{book.currentChapterTitle}</span>
+        </div>
+      </div>
+      <div className="remove-btn">
+        <button type="button" onClick={(e) => handleClick(e, book.id)}>
+          {' '}
+          Remove
+          {' '}
+        </button>
       </div>
     </div>
-    <button type="button">Remove</button>
-  </div>
-);
+  );
+};
 
 Book.propTypes = {
   book: PropTypes.instanceOf(Object),
