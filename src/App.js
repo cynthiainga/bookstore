@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Header from './components/Header';
 import BookstoreContainer from './components/BookstoreContainer';
-import Categories from './redux/categories/categories';
+import Categories from './components/categoriesRoute';
 import store from './redux/configureStore';
 
 const App = () => (
