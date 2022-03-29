@@ -1,0 +1,42 @@
+.form-section {
+  padding: 1rem;
+}
+
+.form-section h2 {
+  margin: 1.813rem 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #888;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form input {
+  width: 60%;
+  padding: 0.81rem 1rem;
+  font-size: 1rem;
+}
+
+.form input::placeholder {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.form-select {
+  width: 20%;
+  padding: 0.81rem 1rem;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.81rem 1.5rem;
+  cursor: pointer;
+  background-color: #0290ff;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+}
