@@ -1,17 +1,19 @@
-import React from 'react';
+const CATEGORIES = 'bookstore/categories/CATEGORIES';
 
-const Categories = () => {
-  const styling = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
+const initialState = [];
 
-  return (
-    <div style={styling}>
-      <h2>Under Construction</h2>
-    </div>
-  );
+export const categoriesStatus = (booksload) => ({
+  type: CATEGORIES,
+  booksload,
+});
+
+const categoriesReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case CATEGORIES:
+      return 'Under Construction';
+    default:
+      return state;
+  }
 };
 
-export default Categories;
+export default categoriesReducer;
