@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
@@ -11,7 +12,7 @@ const Form = () => {
     e.preventDefault();
     if (bookTitle && bookCategory) {
       const newBook = {
-        id: new Date().getTime().toString(),
+        id: uuidv4,
         title: bookTitle,
         author: 'Robert Harris',
         completed: 57,
@@ -48,7 +49,11 @@ const Form = () => {
           <option className="gr-clr" disabled value="">Category</option>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>
+          <option value="Philosophy">Philosophy</option>
           <option value="Economy">Economy</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Romance">Romance</option>
+          <option value="History">History</option>
         </select>
         <button type="submit" onClick={submitBookToStore}>Add Book</button>
       </form>
