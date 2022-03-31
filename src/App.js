@@ -5,6 +5,9 @@ import Header from './components/Header';
 import BookstoreContainer from './components/BookstoreContainer';
 import Categories from './components/categoriesRoute';
 import store from './redux/configureStore';
+import { getBooks } from './redux/books/books';
+
+store.dispatch(getBooks());
 
 const App = () => (
   <Provider store={store}>
