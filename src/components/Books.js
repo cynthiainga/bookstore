@@ -7,7 +7,7 @@ const Books = () => {
   return (
     <section>
       {books.map((book) => (
-        <Book key={book.id} book={book} />
+        <Book key={book.item_id} book={book} />
       ))}
     </section>
   );
