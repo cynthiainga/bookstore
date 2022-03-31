@@ -36,7 +36,7 @@ const Book = ({ book }) => {
         </div>
       </div>
       <div className="remove-btn">
-        <button type="button" onClick={(e) => handleClick(e, book.id)}>
+        <button type="button" onClick={(e) => handleClick(e, book.item_id)}>
           {' '}
           Remove
           {' '}
