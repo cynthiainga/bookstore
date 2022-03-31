@@ -5,27 +5,30 @@ import { addBook } from '../redux/books/books';
 
 const Form = () => {
   const [bookTitle, setBookTitle] = useState('');
+  const [bookAuthor, setBookAuthor] = useState('');
   const [bookCategory, setBookCategory] = useState('');
   const dispatch = useDispatch();
 
   const submitBookToStore = (e) => {
     e.preventDefault();
-    if (bookTitle && bookCategory) {
+    if (bookTitle && bookAuthor && bookCategory) {
       const newBook = {
         id: uuidv4,
         title: bookTitle,
-        author: 'Robert Harris',
+        author: bookAuthor,
         completed: 57,
         currentChapter: 18,
         currentChapterTitle: 'The German Reich',
       };
       dispatch(addBook(newBook));
       setBookTitle('');
+      setBookAuthor('');
       setBookCategory('');
     }
   };
 
   const handleBookTitle = (e) => setBookTitle(e.target.value);
+  const handleBookAuthor = (e) => setBookAuthor(e.target.value);
   const handleBookCategory = (e) => setBookCategory(e.target.value);
 
   return (
@@ -37,6 +40,13 @@ const Form = () => {
           placeholder="Book title"
           value={bookTitle}
           onChange={handleBookTitle}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Book Author"
+          value={bookAuthor}
+          onChange={handleBookAuthor}
           required
         />
         <select
