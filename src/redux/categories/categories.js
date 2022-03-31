@@ -1,15 +1,15 @@
-const CATEGORIES = 'bookstore/categories/CATEGORIES';
+const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
 
 const initialState = [];
 
-export const categoriesStatus = (booksload) => ({
-  type: CATEGORIES,
-  booksload,
+export const checkStatus = (checkload) => ({
+  type: CHECK_STATUS,
+  checkload,
 });
 
 const categoriesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CATEGORIES:
+    case CHECK_STATUS:
       return 'Under Construction';
     default:
       return state;

@@ -65,5 +65,6 @@ Give a :star: if you like this project!
 
 - Thanks to everyone who will get time to check this code especially to code reviewers.
 
-This project is [MIT](./MIT.md) licensed.
 ## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

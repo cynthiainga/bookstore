@@ -1,5 +1,5 @@
 .form-section {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .form-section h2 {
@@ -16,7 +16,7 @@
 }
 
 .form input {
-  width: 60%;
+  width: 32%;
   padding: 0.81rem 1rem;
   font-size: 1rem;
 }
@@ -27,7 +27,7 @@
 }
 
 .form-select {
-  width: 20%;
+  width: 23%;
   padding: 0.81rem 1rem;
   font-size: 1rem;
 }
