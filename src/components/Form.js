@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
+  const [progress, setProgress] = useState(0);
   const [bookTitle, setBookTitle] = useState('');
   const [bookAuthor, setBookAuthor] = useState('');
   const [bookCategory, setBookCategory] = useState('');
@@ -12,19 +13,23 @@ const Form = () => {
   const submitBookToStore = (e) => {
     e.preventDefault();
     if (bookTitle && bookAuthor && bookCategory) {
+      if (progress > 100) return progress;
       const newBook = {
-        id: uuidv4,
+        itme_id: uuidv4(),
         title: bookTitle,
+        category: bookCategory,
         author: bookAuthor,
-        completed: 57,
+        completed: progress,
         currentChapter: 18,
-        currentChapterTitle: 'The German Reich',
+        currentChapterTitle: '',
       };
+      setProgress((progress + Math.floor(Math.random() * 100)));
       dispatch(addBook(newBook));
       setBookTitle('');
       setBookAuthor('');
       setBookCategory('');
     }
+    return progress;
   };
 
   const handleBookTitle = (e) => setBookTitle(e.target.value);
@@ -56,7 +61,7 @@ const Form = () => {
           onChange={handleBookCategory}
           required
         >
-          <option className="gr-clr" disabled value="">Category</option>
+          <option className="gr-clr" disabled value="" defaultValue hidden>Category</option>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>
           <option value="Philosophy">Philosophy</option>
