@@ -1,4 +1,4 @@
-## Copyright 2021, [Cynthia Inha]
+## Copyright 2021, [Cynthia Inga]
 
 
 ###### APP TYPE can be a webpage/website, a web app, a software and so on
