@@ -1,29 +1,72 @@
+import { API_URL, HEADERS } from '../../data/api';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const GET_BOOK = 'bookstore/books/GET_BOOK';
 
 const initialState = [];
 
-export const addBook = (booksload) => ({
-  type: ADD_BOOK,
-  booksload,
-});
+export const addBook = (book) => async (dispatch) => {
+  await fetch(API_URL, {
+    method: 'POST',
+    headers: HEADERS,
+    body: JSON.stringify(book),
+  })
+    .then((response) => response.text())
+    .then(
+      () => dispatch({ type: ADD_BOOK, payload: book }),
+      () => dispatch({ type: ADD_BOOK, payload: null }),
+    );
+};
 
-export const removeBook = (booksload) => ({
-  type: REMOVE_BOOK,
-  booksload,
-});
+export const removeBook = (bookId) => async (dispatch) => {
+  await fetch(`${API_URL}/${bookId}`, {
+    method: 'DELETE',
+    headers: HEADERS,
+    body: JSON.stringify({ item_id: bookId }),
+  })
+    .then((response) => response.text())
+    .then(
+      () => dispatch({ type: REMOVE_BOOK, payload: bookId }),
+      () => dispatch({ type: REMOVE_BOOK, payload: null }),
+    );
+};
 
-const booksReducer = (state = initialState, action) => {
+export const getBooks = () => async (dispatch) => {
+  await fetch(API_URL)
+    .then((books) => books.json())
+    .then(
+      (data) => dispatch({ type: GET_BOOK, payload: data }),
+      () => dispatch({ type: GET_BOOK, payload: [] }),
+    );
+};
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.booksload];
+      return [...state, action.payload];
 
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.booksload);
+      return state.filter((book) => book.item_id !== action.payload);
+
+    case GET_BOOK: {
+      const bookList = [];
+      Object.keys(action.payload).forEach((key) => {
+        const book = action.payload[key][0];
+        let progress = 0;
+        book.item_id = key;
+        if (!book.completed) {
+          progress += Math.floor(Math.random() * 100);
+          book.completed = progress;
+        }
+        bookList.push(book);
+      });
+      return bookList;
+    }
 
     default:
       return state;
   }
 };
 
-export default booksReducer;
+export default reducer;
