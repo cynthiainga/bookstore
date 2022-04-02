@@ -3,7 +3,7 @@ import Books from './Books';
 import Form from './Form';
 
 const BookstoreContainer = () => (
-  <main className="main">
+  <main className="main-container">
     <div className="Line" />
     <Books />
     <div className="Line-3" />

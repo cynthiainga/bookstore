@@ -9,7 +9,7 @@ const Navbar = () => (
           BOOKS
         </NavLink>
       </li>
-      <li>
+      <li className="nav-item1">
         <NavLink to="/categories" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>
           CATEGORIES
         </NavLink>
