@@ -41,7 +41,7 @@ const Form = () => {
 
   return (
     <section className="form-section">
-      <h2>Add New Book</h2>
+      <h2>ADD NEW BOOK</h2>
       <form className="form">
         <input
           type="text"
@@ -59,7 +59,7 @@ const Form = () => {
         />
         <select
           name="category"
-          className="form-control"
+          className="form-select"
           value={bookCategory}
           onChange={handleBookCategory}
           required

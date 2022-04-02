@@ -22,7 +22,7 @@ const Book = ({ book }) => {
           <span className="clickable">Comments</span>
           <div className="sm-line" />
           <button
-            className="romove-btn clickable"
+            className="remove-btn clickable"
             type="button"
             onClick={(e) => handleClick(e, book.item_id)}
           >
@@ -36,7 +36,7 @@ const Book = ({ book }) => {
       </div>
 
       <div className="book-col-2 flex-center-center">
-        <div className="book-completed-chart" />
+        <div className="oval-2" />
         <div className="completed-txt-parcent">
           <span className="completed-parcent">
             {book.completed}
