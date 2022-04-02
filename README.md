@@ -2,11 +2,16 @@
 
 # Bookstore App
 
+![BookStore](./src/images/bookstore.png)
+
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+> "Bookstore" is a simple website built with `REACT` and `REDUX` that displays a list of books from an API and allows you to add and remove books in the API store.
 
 
 ## Built With
 
+- ![Redux](https://img.shields.io/badge/-Redux-1d1919?style=flat&logo=redux)
 - ![React](https://img.shields.io/badge/-React-000000?style=flat&logo=react)
 - ![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=flat&logo=javascript)
 - ![CSS3](https://img.shields.io/badge/-CSS3-000000?style=flat&logo=css3&logoColor=ffffff&labelColor=1572B6)
@@ -64,6 +69,7 @@ Give a :star: if you like this project!
 ## Acknowledgments
 
 - Thanks to everyone who will get time to check this code especially to code reviewers.
+- Thanks [Zeplin](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378) for the template design.
 
 ## 📝 License
 
