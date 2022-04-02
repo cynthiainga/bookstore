@@ -1,4 +1,6 @@
 .app {
   width: 85%;
   margin: 5rem auto;
+  min-width: 860px;
+  background-color: #fdfcfcbb;
 }
