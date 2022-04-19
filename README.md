@@ -55,7 +55,7 @@ For tracking linter errors locally you need to follow these steps:
 👤 **Cynthia Inga**
 
 - GitHub: [@cynthiainga](https://github.com/cynthiainga)
-- LinkedIn: [cynthia-inga7](https://www.linkedin.com/in/cynthia-inga7/)
+- LinkedIn: [cynthia-inga7](https://www.linkedin.com/in/cynthia-inga/)
 - Twitter: [@CynthiaInga_C](https://twitter.com/CynthiaInga_C)
 
 ## :handshake: Contributing
